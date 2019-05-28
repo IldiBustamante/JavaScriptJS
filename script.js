@@ -1,38 +1,60 @@
-//hay primitivos y objetos
-// primitivos number, string, boolean, los que vamos a usar
-// objetos : object, array y function
-// hay variables
-// object {} array []
+/*let btn = document.querySelector("button")
 
-
-let nombre="Ildara";
-let apellido="Bustamante"
-let nombre_completo= nombre + " "+  apellido
-//console.log(nombre_completo); // nos muestra en consola todo, pero hay mejores
-
-let numeros=[10,7,6,4,3,"numeros",true]
-
-//console.log(numeros)
-//console.log(numeros.length) // nos dice el largo de mi arrays
-//console.table(numeros) //nos da una tabla del array, usar cuando uso arrays
-//numeros.push("Hola te saludo") //agrego cosas a mi array
-//numeros.push(75)
-//console.table(numeros)
-
-let persona={
-    nombre : "Maria Ildara",
-    edad:23,
-    vive:true,
+//genero mi funcion para el evento y va a responder con el click
+function hacerClick(){
+    console.log("Hiciste click")
 }
-persona.trabaja=false //propiedades dinamicas que puedo seguir agregando
-persona.TieneGato=true
-console.table(persona)
 
-//estructuras de control con bucles
 
-for (let i = 0; i < numeros.length; i++) {
-    console.table(numeros[i])  
-   
+//agregar nodo de esta forma siempre
+// nodo.addEventListener(evento,callback)
+
+btn.addEventListener("click",hacerClick) //recordar que aca uso el evento
+
+//ejercicio
+
+crear un boton por cada click que se haga
+cada boton nuevo tiene que verse en el DOM
+cada boton nuevo tiene que tener un callback en su propio evento click
+todos los botones en pantalla tienen que tener como texto boton N 
+donde N es un numero arrancando de 1 el cual va aumentando de a uno 
+*/
+
+//voy a crear un boton por cada click
+
+//Ejercicio 
+let btn = document.querySelector("button")
+function hacerClick(){
+    console.log("Hiciste click")
 }
+btn.addEventListener("click",hacerClick)
+
+let contador=1
+
+function hacerClick(){
+
+let botonNuevo=document.createElement("button")
+
+//agrego al DOM
+
+let body=document.querySelector("body")
+body.appendChild(botonNuevo)
+
+//cambiar lo que dice cada boton
+
+botonNuevo.innerText="Boton " + contador
+
+contador=contador +1
+
+//punto 3, su boton nuevo y su callback, o sea, necesito identificar 3 cosas, cual necesita un callback a quien le voy a hacer que cosa y a que etiqueta le corresponde el evento
+function mismaFuncionParaTodosLosBotones(){
+    console.log("Click en alguno de los botones :)")
+
+}
+
+botonNuevo.addEventListener("click",mismaFuncionParaTodosLosBotones)
+
+}
+
 
 
