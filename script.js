@@ -12,10 +12,15 @@ xhr.addEventListener("load",() => {
     //3.1)Chequear que el pedido haya salido bien
 
     if(xhr.status == 200 ){
-        console.log(xhr.response)
+        let resultado= JSON.parse(xhr.response)
+        
+        for (let i = 0; i < resultado.length; i++) {
+            let p =document.createElement("p")
+            p.innerText=resultado[i].name
+            document.body.appendChild(p)
+        }
     }
 })
-
 
 //4)No olvidar enviarlo
 xhr.send()
